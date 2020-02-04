@@ -23,7 +23,7 @@ pipeline {
       stage("build & SonarQube analysis") {
           steps {
              withSonarQubeEnv('sonarQube-server') {
-               sh 'mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar org.jacoco:jacoco-maven-plugin:prepare-agent -Dmaven.test.failure.ignore=true -Dsonar.projectKey=petclinic-app'
+               sh 'mvn install org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar org.jacoco:jacoco-maven-plugin:prepare-agent -Dmaven.test.failure.ignore=true -Dsonar.projectKey=petclinic-app'
              }
            }
         }
